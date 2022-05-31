@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  target:
+    build: ./echo_server
+    ports:
+      - "3001-3005:3000"
+  load_balancer:
+    build: ./src
+    ports:
+      - "3000:3000"
